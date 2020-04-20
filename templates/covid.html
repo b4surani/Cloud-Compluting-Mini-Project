@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+div {
+  background-image: url('https://vectorgrovepreview.azureedge.net/c/796/c79676c.jpg?st=2019-11-06T10%3A03%3A41Z&se=2039-12-31T22%3A00%3A00Z&sp=r&sv=2018-03-28&sr=c&sig=zblTCxEF2g7nMxSIOzivUbXvPyq%2B%2Fz5hxWjVoAbSdWw%3D');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+
+<h1 class="title">
+    Welcome to Covid 19 World Update.
+</h1>
+<div class="column is-4 is-offset-4">
+        </form>
+            <form method="POST" action="/covid/stat">
+            <br>
+            <button class="button is-block is-info is-large is-fullwidth">Global Statistics</button>
+        </form>
+        </form>
+            <form method="POST" action="/covid/time">
+            <br>
+            <button class="button is-block is-info is-large is-fullwidth">World Timeline</button>
+        </form>
+    <br>
+        <form method="POST" action="/covid/count">
+            <div class="field">
+                <div class="control">
+                    <input style="text-transform: uppercase;" class="input is-large" type="text" name="code" placeholder="Enter Country(Ex. US, GB, IN, CN...)" autofocus="">
+                </div>
+            </div>
+            <button class="button is-block is-info is-large is-fullwidth">Go</button>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0] }}
+    </div>
+    {% endif %}
+    {% endwith %}
+</div>
+{% endblock %}

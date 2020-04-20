@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+div {
+  background-image: url('https://i.pinimg.com/originals/53/fa/1b/53fa1badf535656e150f3c0b8bfb782c.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+
+<h1 class="title">
+  Welcome, {{name}}!
+  <br><br>
+  Welcome to "Sunset and Sunrise Times API"
+</h1>
+<br>
+<h2 class="subtitle">
+  {% if current_user.is_authenticated %}
+  We provide sunset and sunrise times for a given latitude and longitude.
+  {% endif %}
+  {% if not current_user.is_authenticated %}
+  Kindly login/signup to check sunrise and sunset times of your zone.
+  {% endif %}
+</h2>
+{% endblock %}
+

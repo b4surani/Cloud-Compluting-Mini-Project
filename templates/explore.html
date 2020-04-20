@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+div {
+  background-image: url('https://wallpaperaccess.com/full/1223757.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Explore</h3>
+        <form method="POST" action="/explore">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="number" maxlength="2" step="0.0000001" name="latitude" placeholder="Enter Latitude in decimal degrees" autofocus="">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="number" maxlength="2" step="0.0000001" name="longitude" placeholder="Enter Longitude in decimal degrees" autofocus="">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="date" pattern="\d{4}-\d{2}-\d{2}" name="date" placeholder="Enter Date in YYYY-MM-DD" autofocus="">
+                </div>
+            </div>
+
+            <button class="button is-block is-info is-large is-fullwidth">Explore Now</button>
+        </form>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="notification is-danger">
+            {{ messages[0] }}. Go to <a href="{{ url_for('explore') }}">explore page</a>.
+        </div>
+    {% endif %}
+    {% endwith %}
+</div>
+{% endblock %}
+

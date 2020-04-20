@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+div {
+  background-image: url('https://wallpapershome.com/images/wallpapers/sunset-1920x1080-forest-mountains-4k-20322.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+
+<h1 class="title">
+  Hello, {{name}}!
+  <br><br>
+  Here you can change your login password or delete user.
+</h1>
+<br>
+<div class="column is-4 is-offset-4">
+        <form method="POST" action="/profile">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="password" name="password1" placeholder="Current Password" autofocus="">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="password" name="password2" placeholder="New Password"autofocus="">
+                </div>
+            </div>
+
+            <button class="button is-block is-info is-large is-fullwidth">Change Password</button>
+        </form>
+            <form method="POST" action="/profile/delete">
+            <br>
+            <button class="button is-block is-info is-large is-fullwidth">Delete Profile</button>
+        </form>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0] }}
+    </div>
+    {% endif %}
+    {% endwith %}
+</div>
+{% endblock %}
