@@ -8,36 +8,34 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them:
+Firstly you need to install Python3, to do so open terminal window and run following commands:
 
-Firstly, you need to install Python3, for linux based system open terminal,
-...
+```
+apt install python
 apt install python3
+```
+
+
+### Installing
+
+Now install required libraries and modules to support project execution and for that run following commands in terminal window:
+
+```
 pip install flask
 pip install flask-login
 pip install flask-sqlalchemy
 pip install flask-marshmallow
 pip install werkzeug
 pip install requests
-...
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
 ```
 
-And repeat
+
+Once everthing is done, download project data to project directory. Now open terminal window -> navigate to project directory and run application file as follows:
 
 ```
-until finished
+python3 app.py
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
