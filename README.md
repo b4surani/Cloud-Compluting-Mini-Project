@@ -101,7 +101,7 @@ http://localhost:5000/about #about page
 
 ### Some important URLs
 
-You can create a user with admin@admin.com which acts as admin in this application. There are two other functions which are only accessible to admin set by developer. Admin can access details of all the registered user's email id and username in All Users section, it responses in json format and it can be filtered by name to quick search. Admin can also delete a user from delete tab in navigation bar.
+You can create a user with email as admin@admin.com which acts as admin and it is set by developer. Admin can access details of all the registered user's email id and username in All Users section, it responses in json format and it can be filtered by name to quick search. Admin can also delete a user from delete tab in navigation bar.
 
 ```
 http://localhost:5000/allusers #to list all users #admin access
