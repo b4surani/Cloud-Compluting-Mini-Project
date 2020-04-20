@@ -30,6 +30,8 @@ pip install requests
 ```
 
 
+### Running Project
+
 Once everthing is done, download project data to project directory. Now open terminal window -> navigate to project directory and run application file as follows:
 
 ```
