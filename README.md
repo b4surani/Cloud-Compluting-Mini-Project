@@ -1,6 +1,6 @@
 # Cloud Compluting Project
 
-This mini project provides Sunset and Sunrise Times using pubic API from sunrise-sunset.org and corona virus statistics from Postman Covid19 API.
+This mini project provides Sunset and Sunrise Times using pubic API from sunrise-sunset.org and corona virus statistics from thevirsutracker.com Coronavirus Data API.
 
 ## Getting Started
 
