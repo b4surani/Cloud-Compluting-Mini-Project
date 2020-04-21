@@ -126,6 +126,15 @@ http://localhost:5000/allusers/<name> #to filter a user from all users #admin ac
 http://localhost:5000/delete #delete page #admin access #to enter email and delete user #admin access
 ```
 
+## Curl Request
+
+* User can update its username by following curl request from terminal. But user have to provide correct email address to do so.
+
+```
+curl -i -H "Content-Type: application/json" -X PUT -d '{"email": "enter user email"}' http://localhost:5000/database=NewUsername
+```
+
+
 ## Security and Authentication
 
 * The user database is secured with a private key.
