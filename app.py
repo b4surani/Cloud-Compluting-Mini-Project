@@ -362,7 +362,7 @@ def covid_time_date(date):
                     res.append(c)       # Append data to new variable
                 else:
                     pass
-            print(res)
+            # print(res)
             return jsonify(res), 200     # Display json output
         else:
             print(response.reason)
@@ -421,7 +421,7 @@ def covid_count_date(date):
             else:
                 print(response.reason)
         except Exception:
-            print('Except')
+            # print('Except')
             error = str(response.status_code) + " " + response.reason
             flash(error)
     return redirect(url_for('covid'))
