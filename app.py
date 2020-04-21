@@ -441,7 +441,7 @@ def database_put(newname):
         return jsonify('Success 200'), 200
 
     
-@app.route('/database=<useremail>', methods=['DEELTE'])      # To delete user filtered by email
+@app.route('/database=<useremail>', methods=['DELETE'])      # To delete user filtered by email
 def database_delete(useremail):
     if not useremail:
         return jsonify({'Abort 404'}), 404
