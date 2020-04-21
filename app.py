@@ -239,7 +239,7 @@ def explore():
         return redirect(url_for('login'))
 
 
-@app.route('/explore', methods=['POST', 'GET'])     # Explore page to request API
+@app.route('/explore', methods=['POST'])     # Explore page to request API
 def explore_post():
     # https: // api.sunrise - sunset.org / json?lat = 36.7201600 & lng = -4.4203400 & date = 2020 - 04 - 19
     api_url_temp = "https://api.sunrise-sunset.org/json?lat={lat}&lng={lng}&date={date}"    # API format
@@ -283,7 +283,7 @@ def delete():
         return redirect(url_for('login'))
 
 
-@app.route('/delete', methods=['GET', 'POST'])      # Delete a user
+@app.route('/delete', methods=['POST'])      # Delete a user
 def delete_post():
     user1check = current_user.is_authenticated
     if (user1check) and (current_user.email == "admin@admin.com"):
