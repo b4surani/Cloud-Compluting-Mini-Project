@@ -62,7 +62,7 @@ Home    Profile    Explore    All Users    Delete User    Logout    Covid-19    
 
 Once you will run the project, it will be hosted on your local server or cloud server. 
 
-* You need to go to your browser and open local IP or cloud IP with port address 5000.
+* You need to go to your browser and open local IP or cloud IP with port address 80/5000.
 
 ```
 http://localhost:5000/ #home page
@@ -130,10 +130,11 @@ http://localhost:5000/delete #delete page #admin access #to enter email and dele
 
 ## Curl Request
 
-* User can update its username by following curl request from the terminal. But the user has to provide correct email address to do so, this is not a secure way of updating username though.
+* User can update its username by using PUT request and delete a user account by DELETE request by following curl request from the terminal window. But the user has to provide correct email address to do so, though this is not a secure way of updating username or deleting a user.
 
 ```
 curl -i -H "Content-Type: application/json" -X PUT -d '{"email": "enter user email"}' http://localhost:5000/database=NewUsername
+curl -i -X DELETE http://3.81.40.139/database=enter user email
 ```
 
 
