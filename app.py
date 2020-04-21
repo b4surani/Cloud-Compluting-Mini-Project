@@ -289,9 +289,10 @@ def delete_post():
     if (user1check) and (current_user.email == "admin@admin.com"):
         email = request.form.get('email')
         query = User.query.filter(User.email.in_([email])).first()
-        db.session.delete(query)        # Delete queried user from database
-        db.session.commit()
-        index()
+        if query:
+            db.session.delete(query)        # Delete queried user from database
+            db.session.commit()
+            index()
         # with open('./tutorial.json', 'r') as data_file:
         #     data = json.load(data_file)
         # for element in data:
@@ -299,8 +300,11 @@ def delete_post():
         #     del element[current_user.email]
         #     del element[current_user.username]
         #     del element[current_user.password]
-        flash('User deleted successfully. 200')
-        return redirect(url_for('delete'))
+            flash('User deleted successfully. 200')
+            return redirect(url_for('delete'))
+        else:
+            flash('User not found. 404')
+            return redirect(url_for('delete'))
     else:
         flash('Please login with admin credentials! 401')
         return redirect(url_for('login'))

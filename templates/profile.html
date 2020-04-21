@@ -14,7 +14,7 @@ div {
 <h1 class="title">
   Hello, {{name}}!
   <br><br>
-  Here you can change your login password or delete user.
+  Here you can change your login password or delete account.
 </h1>
 <br>
 <div class="column is-4 is-offset-4">
@@ -35,7 +35,7 @@ div {
         </form>
             <form method="POST" action="/profile/delete">
             <br>
-            <button class="button is-block is-info is-large is-fullwidth">Delete Profile</button>
+            <button class="button is-block is-info is-large is-fullwidth">Delete Account</button>
         </form>
     {% with messages = get_flashed_messages() %}
     {% if messages %}
