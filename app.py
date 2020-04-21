@@ -362,7 +362,7 @@ def covid_time_date(date):
                     res.append(c)       # Append data to new variable
                 else:
                     pass
-            print(res)
+            # print(res)
             return jsonify(res), 200     # Display json output
         else:
             print(response.reason)
@@ -421,7 +421,7 @@ def covid_count_date(date):
             else:
                 print(response.reason)
         except Exception:
-            print('Except')
+            # print('Except')
             error = str(response.status_code) + " " + response.reason
             flash(error)
     return redirect(url_for('covid'))
@@ -440,6 +440,19 @@ def database_put(newname):
         index()
         return jsonify('Success 200'), 200
 
+    
+@app.route('/database=<useremail>', methods=['DEELTE'])      # To delete user filtered by email
+def database_delete(useremail):
+    if not useremail:
+        return jsonify({'Abort 404'}), 404
+    else:
+        email = useremail
+        query = User.query.filter(User.email.in_([email])).first()
+        db.session.delete(query)    # Delete user from database
+        db.session.commit()
+        index()
+        return jsonify('Success 200'), 200
+    
 
 if __name__ == "__main__":      # Run the mail application
     app.secret_key = os.urandom(12)
