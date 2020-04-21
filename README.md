@@ -25,6 +25,7 @@ pip install flask
 pip install flask-login
 pip install flask-sqlalchemy
 pip install flask-marshmallow
+pip install marshmallow-sqlalchemy
 pip install werkzeug
 pip install requests
 ```
