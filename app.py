@@ -443,4 +443,4 @@ def database_put(newname):
 
 if __name__ == "__main__":      # Run the mail application
     app.secret_key = os.urandom(12)
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0', port=80)
