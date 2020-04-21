@@ -440,6 +440,19 @@ def database_put(newname):
         index()
         return jsonify('Success 200'), 200
 
+    
+@app.route('/database=<useremail>', methods=['DEELTE'])      # To delete user filtered by email
+def database_delete(useremail):
+    if not useremail:
+        return jsonify({'Abort 404'}), 404
+    else:
+        email = useremail
+        query = User.query.filter(User.email.in_([email])).first()
+        db.session.delete(query)    # Delete user from database
+        db.session.commit()
+        index()
+        return jsonify('Success 200'), 200
+    
 
 if __name__ == "__main__":      # Run the mail application
     app.secret_key = os.urandom(12)
